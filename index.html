@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Cafe Curator</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕️</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Savate:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Finder</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
-  <h1>☕️ Cafe Curator 🍵</h1>
-  <p>Find and save the best cafes near you.</p>
+  <h2>Cafe Finder</h2>
 
-  <div>
-    <button onclick="getLocation()">Find Cafes Near Me</button>
-    <button onclick="showSaved()">Show Saved Cafes</button>
-  </div>
+  <button onclick="findCafesNearMe()">Find Cafes Near Me</button>
+  <br><br>
 
-  <div class="cards"></div>
- </body>
+  <input type="text" id="cityInput" placeholder="Enter city name" />
+  <button onclick="findCafesByCity()">Find Cafes in City</button>
+
+  <div id="map"></div>
+
+  <h3>Saved Cafes</h3>
+  <ul id="savedCafesList"></ul>
+
+  <script src="script.js"></script>
+</body>
 </html>
